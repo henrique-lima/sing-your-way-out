@@ -1,0 +1,107 @@
+/* Main css file for tabbit */
+
+/* FONTS */
+
+@font-face {
+    font-family: '8bitwonder';
+    src: url('../fonts/8-bit_wonder-webfont.eot');
+    src: url('../fonts/8-bit_wonder-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/8-bit_wonder-webfont.woff2') format('woff2'),
+         url('../fonts/8-bit_wonder-webfont.woff') format('woff'),
+         url('../fonts/8-bit_wonder-webfont.ttf') format('truetype'),
+         url('../fonts/8-bit_wonder-webfont.svg#8bit_wondernominal') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* GENERAL STYLES */
+body { background: black; color: #fff; }
+header { font-size: 32pt; }
+
+/* STRUCTURAL STYLES */
+#main-container { position: absolute; top: 0; bottom: 0; left: 0; right: 0; }
+header { text-align: center; }
+#tabbit { position: absolute; top: 80px; bottom: 0; left: 0; right: 0; }
+#score-container { position: absolute; left: 12.5%; }
+#player-container { position: absolute; right: 12.5%; }
+#playingfield { width: 500px; margin: 0 auto; position: relative; height: 100%; overflow-y: hidden; }
+#cords { height: 100%; position: absolute; top: 0; bottom: 0; width: 100%; }
+.cord { width: 5px; margin: 0 60px; height: 100%; float: left; }
+#hitarea { position: absolute; top: 50px; left: -50px; width: 600px; height: 50px; z-index: 1; }
+
+#chords { position: absolute; top: 0; bottom: 0; left: 0; right: 0; overflow: hidden; }
+.chord { width: 40px; height: 40px; float: left;  position: absolute; left: 42px; clear: both; }
+
+#musicplayer { width: 400px; margin: 0 auto; position: relative; height: 150px; }
+
+/* FONT STYLES */
+.font-retro { font-family: '8bitwonder', 'Courier'; }
+
+/* APPEARANCE STYLES */
+.cord { background: #FFF; }
+#hitarea { border: 5px solid green; }
+.chord { border-radius: 50px; font-family: "8bitwonder", 'Courier'; text-align: center; line-height: 58px; font-size: 20pt; }
+.chord.cord-1 { background-color: red; color: #fff; border-color: red; }
+.chord.cord-2 { background-color: orange; color: #fff; border-color: orange; }
+.chord.cord-3 { background-color: yellow; color: #000; border-color: yellow; }
+.chord.cord-4 { background-color: green; color: #fff; border-color: green; }
+
+.chord { border-radius: 60px; background-color: red; color: #fff; 
+	border-color: red; text-align: center; line-height: 40px; font-size: 12pt;}
+
+#button-start { color: purple; font-size: 20pt; text-align: center; z-index: 5; margin-top: 5px; margin-bottom: 5px; cursor: pointer; }
+#button-start {
+    -webkit-animation: blink 2s infinite;
+    -moz-animation: blink 2s infinite;    
+    animation: blink 2s infinite;
+}
+
+@-webkit-keyframes blink{
+
+    0%{ opacity:0;}
+    50% { opacity: 1;}
+    100%{opacity:0;}
+}
+
+@-moz-keyframes blink{
+
+    0%{ opacity:0;}
+    100%{opacity:1;}
+
+}
+
+@keyframes blink{
+
+    0%{ opacity:0;}
+    50%{ opacity: 1;}
+    100%{opacity:0;}
+
+}
+
+.startgame { 
+    -webkit-animation: moveChords 283s linear;
+    -moz-animation: moveChords 283s linear;
+}
+
+@-webkit-keyframes moveChords {
+
+    0% { top: 0px;}
+    100% { top: -28300px;}
+}
+
+@keyframes moveChords {
+	0% { top: 0px;}
+    100% { top: -28300px;}
+}
+
+
+.exploded {
+	-webkit-animation: explodeChord 0.75s ease-out;
+	-webkit-animation-fill-mode: forwards;
+}
+
+@-webkit-keyframes explodeChord {
+	0% { opacity: 0; }
+	50% { opacity: 1; scale: 2; transform: scale(1.5); }
+	100% { opacity: 0; transform: scale(1.8); }
+}
